@@ -1,0 +1,127 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="1.0.0" author="helen">
+        <createTable tableName="customers">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="projects">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="cost" type="DECIMAL(10)" defaultValue="NULL">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="status" type="VARCHAR(255)" defaultValue="IN_PROGRESS">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="skills">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="teams">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="employees">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="last_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="team_id" type="INT">
+                <constraints nullable="false"
+                             references="teams(id)"
+                             foreignKeyName="FK_employees_team_id"/>
+            </column>
+
+            <column name="work_experience" type="INT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="customer_projects">
+            <column name="customer_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="customers(id)"
+                             foreignKeyName="FK_customer_projects_customer_id"/>
+            </column>
+
+            <column name="project_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="projects(id)"
+                             foreignKeyName="FK_customer_projects_project_id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="employee_skills">
+            <column name="employee_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="employees(id)"
+                             foreignKeyName="FK_employee_skills_employee_id"/>
+            </column>
+
+            <column name="skill_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="skills(id)"
+                             foreignKeyName="FK_employee_skills_skill_id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="project_teams">
+            <column name="project_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="projects(id)"
+                             foreignKeyName="FK_project_teams_project_id"/>
+            </column>
+
+            <column name="team_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="teams(id)"
+                             foreignKeyName="FK_project_teams_team_id"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
