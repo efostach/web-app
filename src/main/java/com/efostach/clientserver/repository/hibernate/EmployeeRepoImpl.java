@@ -1,12 +1,13 @@
-package com.efostach.clientserver.repository;
+package com.efostach.clientserver.repository.hibernate;
 
-import com.efostach.hibernate.model.Employee;
+import com.efostach.clientserver.model.Employee;
+import com.efostach.clientserver.repository.EmployeeRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-import static com.efostach.hibernate.repository.hibernate.HibernateUtil.getSessionFactory;
+import static com.efostach.clientserver.repository.hibernate.HibernateUtil.getSessionFactory;
 
 public class EmployeeRepoImpl implements EmployeeRepository {
 

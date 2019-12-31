@@ -1,12 +1,14 @@
-package com.efostach.clientserver.repository;
+package com.efostach.clientserver.repository.hibernate;
 
-import com.efostach.hibernate.model.Team;
+import com.efostach.clientserver.model.Team;
+import com.efostach.clientserver.repository.TeamRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-import static com.efostach.hibernate.repository.hibernate.HibernateUtil.getSessionFactory;
+import static com.efostach.clientserver.repository.hibernate.HibernateUtil.getSessionFactory;
+
 
 public class TeamRepoImpl implements TeamRepository {
 
@@ -16,14 +18,6 @@ public class TeamRepoImpl implements TeamRepository {
 
         session.close();
         return team;
-    }
-
-    public List<Team> getBySkill(Integer skillId) {
-        Session session = getSessionFactory().openSession();
-        List teams =  session.createQuery("FROM Team t WHERE t.id IN (SELECT DISTINCT e.teamId FROM Employee e LEFT JOIN e.skills es WHERE es.id = :skill_id)").setParameter("skill_id", skillId).list();
-
-        session.close();
-        return (List<Team>) teams;
     }
 
     public List<Team> getAll() {

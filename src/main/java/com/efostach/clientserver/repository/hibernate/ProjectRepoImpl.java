@@ -1,12 +1,13 @@
-package com.efostach.clientserver.repository;
+package com.efostach.clientserver.repository.hibernate;
 
-import com.efostach.hibernate.model.Project;
+import com.efostach.clientserver.model.Project;
+import com.efostach.clientserver.repository.ProjectRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-import static com.efostach.hibernate.repository.hibernate.HibernateUtil.getSessionFactory;
+import static com.efostach.clientserver.repository.hibernate.HibernateUtil.getSessionFactory;
 
 public class ProjectRepoImpl implements ProjectRepository {
 
@@ -16,30 +17,6 @@ public class ProjectRepoImpl implements ProjectRepository {
 
         session.close();
         return project;
-    }
-
-    public List<Project> getByTeam(Integer teamId) {
-        Session session = getSessionFactory().openSession();
-        List projects = session.createQuery("FROM Project p LEFT JOIN FETCH p.teams t WHERE t.id =" + teamId).list();
-
-        session.close();
-        return (List<Project>) projects;
-    }
-
-    public List<Project> getBySkill(Integer skillId) {
-        Session session = getSessionFactory().openSession();
-        List projects = session.createQuery("SELECT DISTINCT p FROM Project p LEFT JOIN FETCH p.teams t WHERE t.id IN (SELECT DISTINCT e.teamId FROM Employee e LEFT JOIN e.skills es WHERE es.id = :skill_id) ORDER BY p.id").setParameter("skill_id", skillId).list();
-
-        session.close();
-        return (List<Project>) projects;
-    }
-
-    public List<Project> getByCost(Integer cost) {
-        Session session = getSessionFactory().openSession();
-        List projects = session.createQuery("FROM Project p WHERE p.cost = " + cost).list();
-
-        session.close();
-        return (List<Project>) projects;
     }
 
     public List<Project> getAll() {
