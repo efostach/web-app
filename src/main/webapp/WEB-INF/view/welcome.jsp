@@ -8,7 +8,5 @@
 </head>
 <body>
     <h1>Menu</h1>
-    <p><strong>1.Crete Project</strong></p>
-    <p><strong>2.Complete Project</strong></p>
 </body>
 </html>

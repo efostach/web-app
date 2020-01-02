@@ -12,7 +12,7 @@ public class GeneralServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("menu.jsp").forward(request, response);
+        request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 
     @Override
