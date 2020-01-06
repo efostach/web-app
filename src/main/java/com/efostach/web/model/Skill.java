@@ -38,6 +38,6 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill: " + id + "," + name + "\n";
+        return id + ", " + name + "\n";
     }
 }
