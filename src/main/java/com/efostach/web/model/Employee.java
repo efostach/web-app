@@ -22,7 +22,7 @@ public class Employee {
             inverseJoinColumns=@JoinColumn(name="skill_id"))
     private List<Skill> skills;
 
-    private Employee() {
+    public Employee() {
     }
 
     public Employee(Integer id, String firstName, String lastName, Integer specialty, List<Skill> skills) {
@@ -75,6 +75,6 @@ public class Employee {
 
     @Override
     public String toString(){
-        return "Employee: " + id + "," + firstName + "," + lastName + "," + specialty + "," + skills + "\n";
+        return id + ", " + firstName + ", " + lastName + ", " + specialty + "\n";
     }
 }
