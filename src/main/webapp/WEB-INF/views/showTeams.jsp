@@ -5,21 +5,21 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Show Skills</title>
+    <title>Show Teams</title>
 </head>
 <body>
-<h1>Show Skills</h1>
+<h1>Show Teams</h1>
 <%
-    List<String> skills = (List<String>) request.getAttribute("skills");
+    List<String> teams = (List<String>) request.getAttribute("teams");
 
-    if (skills != null && !skills.isEmpty()) {
+    if (teams != null && !teams.isEmpty()) {
         out.println("<ui>");
-        for (String s : skills) {
+        for (String s : teams) {
             out.println(s);
             out.println("</br>");
         }
         out.println("</ui>");
-    } else out.println("<p>There are no skills yet!</p>");
+    } else out.println("<p>There are no teams yet!</p>");
     out.println("</br>");
 %>
 <button class="back-result" onclick="location.href='/'"><span>Back</span></button>

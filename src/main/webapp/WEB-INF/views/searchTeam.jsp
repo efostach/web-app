@@ -7,15 +7,15 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Search Skill</title>
+    <title>Search Team</title>
 </head>
 <body>
-<h1>Search Skill</h1>
+<h1>Search Team</h1>
 <%
     String msg = (String) request.getAttribute("warning_msg");
     if (msg == null) {
-        if (request.getAttribute("skill") != null) {
-            out.println("<p>" + request.getAttribute("skill") + "</p>");
+        if (request.getAttribute("team") != null) {
+            out.println("<p>" + request.getAttribute("team") + "</p>");
         }
     } else out.println("<p>" + msg + "</p>");
 %>

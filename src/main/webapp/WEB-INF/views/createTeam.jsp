@@ -6,13 +6,13 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Create Skill</title>
+    <title>Create Team</title>
 </head>
 <body>
-<h1>Create SKill</h1>
+<h1>Create Team</h1>
 <%
-    if (request.getAttribute("skill") != null) {
-        out.println("<p>" + request.getAttribute("skill") + "</p>");
+    if (request.getAttribute("team") != null) {
+        out.println("<p>" + request.getAttribute("team") + "</p>");
     }
 %>
 <form method="post">

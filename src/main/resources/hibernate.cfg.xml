@@ -13,11 +13,11 @@
         <property name="show_sql">false</property>
 
         <!-- List of XML mapping files -->
-        <mapping class="com.efostach.hibernate.model.Customer"/>
-        <mapping class="com.efostach.hibernate.model.Project"/>
-        <mapping class="com.efostach.hibernate.model.Employee"/>
-        <mapping class="com.efostach.hibernate.model.Skill"/>
-        <mapping class="com.efostach.hibernate.model.Team"/>
+        <mapping class="com.efostach.web.model.Customer"/>
+        <mapping class="com.efostach.web.model.Project"/>
+        <mapping class="com.efostach.web.model.Employee"/>
+        <mapping class="com.efostach.web.model.Skill"/>
+        <mapping class="com.efostach.web.model.Team"/>
     </session-factory>
 </hibernate-configuration>
 

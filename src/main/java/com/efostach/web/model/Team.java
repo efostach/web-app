@@ -53,6 +53,6 @@ public class Team {
 
     @Override
     public String toString(){
-        return id + ", " + name + ", " + employees + "\n";
+        return id + ", " + name + "\n";
     }
 }

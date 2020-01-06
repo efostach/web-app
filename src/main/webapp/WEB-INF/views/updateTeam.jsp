@@ -6,10 +6,10 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Update Skill</title>
+    <title>Update Team</title>
 </head>
 <body>
-<h1>Update Skill</h1>
+<h1>Update Team</h1>
 <form method="post">
     <label>Id<br/>
         <input type="text" name="id"><br/>

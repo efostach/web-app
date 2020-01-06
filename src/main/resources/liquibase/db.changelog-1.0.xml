@@ -31,9 +31,8 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="skill_id" type="INT">
-                <constraints primaryKey="true"
-                             nullable="false"
+            <column name="skill_id" type="INT" defaultValue="NULL">
+                <constraints nullable="true"
                              references="skills(id)"
                              foreignKeyName="FK_skills_id"/>
             </column>
@@ -48,9 +47,8 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="employee_id" type="INT">
-                <constraints primaryKey="true"
-                             nullable="false"
+            <column name="employee_id" type="INT" defaultValue="NULL">
+                <constraints nullable="true"
                              references="employees(id)"
                              foreignKeyName="FK_employees_id"/>
             </column>
@@ -74,7 +72,7 @@
                 <constraints nullable="true"/>
             </column>
 
-            <column name="team_id" type="INT">
+            <column name="team_id" type="INT" defaultValue="NULL">
                 <constraints nullable="true"
                              references="teams(id)"
                              foreignKeyName="FK_teams_id"/>
@@ -90,9 +88,8 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="project_id" type="INT">
-                <constraints primaryKey="true"
-                             nullable="false"
+            <column name="project_id" type="INT" defaultValue="NULL">
+                <constraints nullable="true"
                              references="projects(id)"
                              foreignKeyName="FK_projects_id"/>
             </column>

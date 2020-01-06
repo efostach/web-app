@@ -1,7 +1,7 @@
 package com.efostach.web.controller;
 
-import com.efostach.web.model.Skill;
-import com.efostach.web.repository.hibernate.SkillRepoImpl;
+import com.efostach.web.model.Team;
+import com.efostach.web.repository.hibernate.TeamRepoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,19 +13,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/skill/list")
-public class ShowSkills extends HttpServlet {
+@WebServlet("/team/list")
+public class ShowTeams extends HttpServlet {
 
-    private SkillRepoImpl ioSkill = new SkillRepoImpl();
+    private TeamRepoImpl ioTeam = new TeamRepoImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<String> skills = new ArrayList<>();
-        for (Skill skill : ioSkill.getAll()) {
-            skills.add(skill.toString());
+        List<String> teams = new ArrayList<>();
+        for (Team team : ioTeam.getAll()) {
+            teams.add(team.toString());
         }
-        req.setAttribute("skills", skills);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/showSkills.jsp");
+        req.setAttribute("teams", teams);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/showTeams.jsp");
         requestDispatcher.forward(req, resp);
     }
 
