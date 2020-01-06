@@ -1,0 +1,49 @@
+body {
+    background-color: whitesmoke;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    margin: 20px;
+}
+
+.menu-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #6f9970;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 20px;
+}
+
+.menu-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.menu-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 20px;
+    transition: 0.5s;
+}
+
+.menu-button:hover span {
+    padding-right: 25px;
+}
+
+.menu-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}

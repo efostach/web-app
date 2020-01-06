@@ -1,7 +1,6 @@
-package com.efostach.clientserver.model;
+package com.efostach.web.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "skills")

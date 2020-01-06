@@ -75,8 +75,7 @@
             </column>
 
             <column name="team_id" type="INT">
-                <constraints primaryKey="true"
-                             nullable="false"
+                <constraints nullable="true"
                              references="teams(id)"
                              foreignKeyName="FK_teams_id"/>
             </column>

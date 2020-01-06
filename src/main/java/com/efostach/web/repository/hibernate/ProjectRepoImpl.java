@@ -1,13 +1,14 @@
-package com.efostach.clientserver.repository.hibernate;
+package com.efostach.web.repository.hibernate;
 
-import com.efostach.clientserver.model.Project;
-import com.efostach.clientserver.repository.ProjectRepository;
+import com.efostach.web.model.Project;
+import com.efostach.web.model.ProjectStatus;
+import com.efostach.web.repository.ProjectRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-import static com.efostach.clientserver.repository.hibernate.HibernateUtil.getSessionFactory;
+import static com.efostach.web.repository.hibernate.HibernateUtil.getSessionFactory;
 
 public class ProjectRepoImpl implements ProjectRepository {
 
@@ -30,7 +31,9 @@ public class ProjectRepoImpl implements ProjectRepository {
     public void create(Project project) {
         Session session = getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-
+        if (project.getStatus() == null) {
+            project.setStatus(ProjectStatus.IN_PROGRESS);
+        }
         session.save(project);
         transaction.commit();
         session.close();

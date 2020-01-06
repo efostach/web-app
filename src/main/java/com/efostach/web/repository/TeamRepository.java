@@ -1,6 +1,6 @@
-package com.efostach.clientserver.repository;
+package com.efostach.web.repository;
 
-import com.efostach.clientserver.model.Team;
+import com.efostach.web.model.Team;
 
 public interface TeamRepository extends GenericRpository<Team, Integer> {
 

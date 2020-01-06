@@ -1,6 +1,6 @@
-package com.efostach.clientserver.repository.hibernate;
+package com.efostach.web.repository.hibernate;
 
-import com.efostach.clientserver.model.*;
+import com.efostach.web.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

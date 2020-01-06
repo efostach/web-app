@@ -1,7 +1,7 @@
-package com.efostach.clientserver.repository;
+package com.efostach.web.repository;
 
 
-import com.efostach.clientserver.model.Employee;
+import com.efostach.web.model.Employee;
 
 public interface EmployeeRepository extends GenericRpository<Employee, Integer> {
 

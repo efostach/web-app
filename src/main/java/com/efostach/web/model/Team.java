@@ -1,4 +1,4 @@
-package com.efostach.clientserver.model;
+package com.efostach.web.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,7 +18,7 @@ public class Team {
             inverseJoinColumns=@JoinColumn(name="project_id"))
     private List<Employee> employees;
 
-    private Team() {
+    public Team() {
     }
 
     public Team(Integer id, String name, List<Employee> employees) {

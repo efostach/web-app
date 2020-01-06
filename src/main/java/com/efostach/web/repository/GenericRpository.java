@@ -1,4 +1,4 @@
-package com.efostach.clientserver.repository;
+package com.efostach.web.repository;
 
 import java.sql.SQLException;
 import java.util.List;

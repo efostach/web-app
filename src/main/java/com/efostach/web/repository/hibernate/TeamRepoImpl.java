@@ -1,13 +1,13 @@
-package com.efostach.clientserver.repository.hibernate;
+package com.efostach.web.repository.hibernate;
 
-import com.efostach.clientserver.model.Team;
-import com.efostach.clientserver.repository.TeamRepository;
+import com.efostach.web.model.Team;
+import com.efostach.web.repository.TeamRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-import static com.efostach.clientserver.repository.hibernate.HibernateUtil.getSessionFactory;
+import static com.efostach.web.repository.hibernate.HibernateUtil.getSessionFactory;
 
 
 public class TeamRepoImpl implements TeamRepository {

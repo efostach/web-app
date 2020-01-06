@@ -1,6 +1,6 @@
-package com.efostach.clientserver.repository;
+package com.efostach.web.repository;
 
-import com.efostach.clientserver.model.Customer;
+import com.efostach.web.model.Customer;
 
 public interface CustomerRepository extends GenericRpository<Customer, Integer> {
 

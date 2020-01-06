@@ -1,14 +1,186 @@
-body
-{
-    background-color:#d0e4fe;
+body {
+    background-color: whitesmoke;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    padding: 20px;
 }
-h1
-{
-    color:orange;
-    text-align:center;
+
+h1 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
-p
-{
-    font-family:"Times New Roman";
-    font-size:20px;
+
+
+.menu-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #6f9970;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 200px;
+}
+
+.menu-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.menu-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.menu-button:hover span {
+    padding-right: 25px;
+}
+
+.menu-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+.submit {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #6f9970;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 200px;
+}
+
+.submit span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.submit span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.submit:hover span {
+    padding-right: 25px;
+}
+
+.submit:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.back {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #6c767c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 200px;
+}
+
+.back span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.back span:before {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 80px;
+    transition: 0.5s;
+}
+
+.back:hover span {
+    padding-left: 25px;
+}
+
+.back:hover span:before {
+    opacity: 1;
+    left: 0;
+}
+
+.back-result {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #6c767c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 2px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 2px;
+}
+
+.back-result span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.back-result span:before {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 80px;
+    transition: 0.5s;
+}
+
+.back-result:hover span {
+    padding-left: 25px;
+}
+
+.back-result:hover span:before {
+    opacity: 1;
+    left: 0;
+}
+
+input[type=text] {
+    width: 400px;
+    padding: 5px 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 2px #555;
 }
