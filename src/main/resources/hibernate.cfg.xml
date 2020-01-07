@@ -6,9 +6,9 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/client-server-app-db</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">Tktyf+7*%</property>
+        <property name="connection.url">mysql://vbp5fvaylyk9wfnq:t6e40pi7opfhq6ic@wyqk6x041tfxg39e.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/qzjeks6w9ruae12n</property>
+        <property name="connection.username">vbp5fvaylyk9wfnq</property>
+        <property name="connection.password">t6e40pi7opfhq6ic</property>
         <property name="hibernate.id.new_generator_mappings">false</property>
         <property name="show_sql">false</property>
 

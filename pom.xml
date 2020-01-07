@@ -35,12 +35,12 @@
 
         <!-- Java Standard Tag Library -->
         <dependency>
-           <groupId>jstl</groupId>
-           <artifactId>jstl</artifactId>
-           <version>1.2</version>
-       </dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
-       <!-- Java Expression Language -->
+        <!-- Java Expression Language -->
         <dependency>
             <groupId>javax.el</groupId>
             <artifactId>el-api</artifactId>
@@ -111,9 +111,11 @@
                         /Users/macbook/Downloads/hibernate-CRUD-app-master/src/main/resources/liquibase/master.xml
                     </changeLogFile>
                     <driver>com.mysql.cj.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/client-server-app-db</url>
-                    <username>root</username>
-                    <password>Tktyf+7*%</password>
+                    <url>
+                        jdbc:mysql://vbp5fvaylyk9wfnq:t6e40pi7opfhq6ic@wyqk6x041tfxg39e.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/qzjeks6w9ruae12n
+                    </url>
+                    <username>vbp5fvaylyk9wfnq</username>
+                    <password>t6e40pi7opfhq6ic</password>
                 </configuration>
                 <executions>
                     <execution>
@@ -144,6 +146,30 @@
                     <path>/</path>
                     <port>8080</port>
                 </configuration>
+            </plugin>
+
+            <!-- Heroku -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.heroku</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>9.0.30.0</version>
+                                    <destFileName>webapp-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 
