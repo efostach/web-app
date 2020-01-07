@@ -14,11 +14,11 @@ public class Customer {
     private String name;
     @ManyToMany
     @JoinTable (name="customer_projects",
-            joinColumns=@JoinColumn (name="team_id"),
+            joinColumns=@JoinColumn (name="customer_id"),
             inverseJoinColumns=@JoinColumn(name="project_id"))
     private List<Project> projects;
 
-    private Customer() {
+    public Customer() {
     }
 
     public Customer(Integer id, String name, List<Project> projects) {
@@ -53,6 +53,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customers: " + id + "," + name +  "," + projects + "\n";
+        return id + "," + name + "\n";
     }
 }

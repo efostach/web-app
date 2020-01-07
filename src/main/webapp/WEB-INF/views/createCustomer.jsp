@@ -6,30 +6,24 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Create Employee</title>
+    <title>Create Customer</title>
 </head>
 <body>
-<h1>Create Employee</h1>
+<h1>Create Customer</h1>
 <%
     String msg = (String) request.getAttribute("warning_msg");
     if (msg == null) {
-        if (request.getAttribute("employee") != null) {
-            out.println("<p>" + request.getAttribute("employee") + "</p>");
+        if (request.getAttribute("customer") != null) {
+            out.println("<p>" + request.getAttribute("customer") + "</p>");
         }
     } else out.println("<p>" + msg + "</p>");
 %>
 <form method="post">
-    <label>First Name<br/>
-        <input type="text" name="first_name"><br/>
+    <label>Name<br/>
+        <input type="text" name="name"><br/>
     </label>
-    <label>Last Name<br/>
-        <input type="text" name="last_name"><br/>
-    </label>
-    <label>Specialty<br/>
-        <input type="text" name="specialty"><br/>
-    </label>
-    <label>Skill<br/>
-        <input type="text" name="skill"><br/>
+    <label>Project<br/>
+        <input type="text" name="project"><br/>
     </label>
     <button class="submit" type="submit"><span>Submit</span></button>
 </form>

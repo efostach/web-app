@@ -1,7 +1,7 @@
 package com.efostach.web.controller;
 
-import com.efostach.web.model.Employee;
-import com.efostach.web.repository.hibernate.EmployeeRepoImpl;
+import com.efostach.web.model.Customer;
+import com.efostach.web.repository.hibernate.CustomerRepoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,14 +14,14 @@ import java.io.IOException;
 import static com.efostach.web.controller.ControllerUtil.EMPTY_INPUT_VALUE_WARN_MSG;
 import static com.efostach.web.controller.ControllerUtil.OBJ_NOT_FOUND_WARN_MSG;
 
-@WebServlet("/employee/search")
-public class SearchEmployee extends HttpServlet {
+@WebServlet("/customer/search")
+public class SearchCustomer extends HttpServlet {
 
-    private EmployeeRepoImpl ioEmployee = new EmployeeRepoImpl();
+    private CustomerRepoImpl ioCustomer = new CustomerRepoImpl();
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/searchEmployee.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/searchCustomer.jsp");
         requestDispatcher.forward(req, resp);
     }
 
@@ -30,11 +30,11 @@ public class SearchEmployee extends HttpServlet {
         if (!req.getParameter("id").isEmpty()) {
             Integer id = Integer.valueOf(req.getParameter("id"));
 
-            Employee employee = ioEmployee.getById(id);
-            if (employee == null) {
+            Customer customer = ioCustomer.getById(id);
+            if (customer == null) {
                 req.setAttribute("warning_msg", OBJ_NOT_FOUND_WARN_MSG);
             }
-            req.setAttribute("employee", employee);
+            req.setAttribute("customer", customer);
         } else
             req.setAttribute("warning_msg", EMPTY_INPUT_VALUE_WARN_MSG);
         doGet(req, resp);

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.efostach.web.controller.Util.EMPTY_INPUT_VALUE_WARN_MSG;
-import static com.efostach.web.controller.Util.OBJ_NOT_FOUND_WARN_MSG;
+import static com.efostach.web.controller.ControllerUtil.EMPTY_INPUT_VALUE_WARN_MSG;
+import static com.efostach.web.controller.ControllerUtil.OBJ_NOT_FOUND_WARN_MSG;
 
 @WebServlet("/skill/search")
 public class SearchSkill extends HttpServlet {

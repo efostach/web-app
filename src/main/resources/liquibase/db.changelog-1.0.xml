@@ -95,5 +95,69 @@
             </column>
         </createTable>
 
+        <createTable tableName="customer_projects">
+            <column name="customer_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="customers(id)"
+                             foreignKeyName="FK_customer_projects_customer_id"/>
+            </column>
+
+            <column name="project_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="projects(id)"
+                             foreignKeyName="FK_customer_projects_project_id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="employee_skills">
+            <column name="employee_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="employees(id)"
+                             foreignKeyName="FK_employee_skills_employee_id"/>
+            </column>
+
+            <column name="skill_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="skills(id)"
+                             foreignKeyName="FK_employee_skills_skill_id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="project_teams">
+            <column name="project_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="projects(id)"
+                             foreignKeyName="FK_project_teams_project_id"/>
+            </column>
+
+            <column name="team_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="teams(id)"
+                             foreignKeyName="FK_project_teams_team_id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="team_employees">
+            <column name="team_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="teams(id)"
+                             foreignKeyName="FK_team_employees_team_id"/>
+            </column>
+
+            <column name="employee_id" type="INT">
+                <constraints primaryKey="true"
+                             nullable="false"
+                             references="teams(id)"
+                             foreignKeyName="FK_team_employees_employee_id"/>
+            </column>
+        </createTable>
+
     </changeSet>
 </databaseChangeLog>

@@ -13,9 +13,9 @@ public class Team {
     @Column(name = "name", nullable = false)
     private String name;
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable (name="project_teams",
+    @JoinTable (name="team_employees",
             joinColumns=@JoinColumn (name="team_id"),
-            inverseJoinColumns=@JoinColumn(name="project_id"))
+            inverseJoinColumns=@JoinColumn(name="employee_id"))
     private List<Employee> employees;
 
     public Team() {

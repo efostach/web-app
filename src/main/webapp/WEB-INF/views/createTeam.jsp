@@ -11,13 +11,19 @@
 <body>
 <h1>Create Team</h1>
 <%
-    if (request.getAttribute("team") != null) {
-        out.println("<p>" + request.getAttribute("team") + "</p>");
-    }
+    String msg = (String) request.getAttribute("warning_msg");
+    if (msg == null) {
+        if (request.getAttribute("team") != null) {
+            out.println("<p>" + request.getAttribute("team") + "</p>");
+        }
+    } else out.println("<p>" + msg + "</p>");
 %>
 <form method="post">
     <label>Name<br/>
         <input type="text" name="name"><br/>
+    </label>
+    <label>Employee<br/>
+        <input type="text" name="employee"><br/>
     </label>
     <button class="submit" type="submit"><span>Submit</span></button>
 </form>

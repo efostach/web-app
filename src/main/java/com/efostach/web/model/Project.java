@@ -1,7 +1,6 @@
 package com.efostach.web.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -71,15 +70,12 @@ public class Project {
         return teams;
     }
 
-    public void setTeams(Integer teamId) {
-        Team team = new Team();
-        team.setId(teamId);
-        this.teams = new ArrayList<>();
-        this.teams.add(team);
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
     }
 
     @Override
     public String toString(){
-        return id + " ," + name + " ," + budget + " ," + status + "\n";
+        return id + ", " + name + ", " + budget + ", " + status + "\n";
     }
 }

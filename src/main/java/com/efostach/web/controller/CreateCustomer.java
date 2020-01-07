@@ -1,9 +1,9 @@
 package com.efostach.web.controller;
 
+import com.efostach.web.model.Customer;
 import com.efostach.web.model.Project;
-import com.efostach.web.model.Team;
+import com.efostach.web.repository.hibernate.CustomerRepoImpl;
 import com.efostach.web.repository.hibernate.ProjectRepoImpl;
-import com.efostach.web.repository.hibernate.TeamRepoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,39 +17,37 @@ import java.util.List;
 
 import static com.efostach.web.controller.ControllerUtil.REF_OBJ_NOT_EXISTS_WARN_MSG;
 
-@WebServlet("/project/create")
-public class CreateProject extends HttpServlet {
+@WebServlet("/customer/create")
+public class CreateCustomer extends HttpServlet {
 
+    private CustomerRepoImpl ioCustomer = new CustomerRepoImpl();
     private ProjectRepoImpl ioProject = new ProjectRepoImpl();
-    private TeamRepoImpl ioTeam = new TeamRepoImpl();
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/createProject.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/createCustomer.jsp");
         requestDispatcher.forward(req, resp);
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-        Integer budget = Integer.valueOf(req.getParameter("budget"));
-        String team = req.getParameter("team");
+        String project = req.getParameter("project");
 
-        Project project = new Project();
-        project.setName(name);
-        project.setBudget(budget);
+        Customer customer = new Customer();
+        customer.setName(name);
 
-        if (!team.equals("")) {
-            List<Team> teams = new ArrayList<>();
-            if (ioTeam.getById(Integer.valueOf(team)) != null) {
-                teams.add(ioTeam.getById(Integer.valueOf(team)));
+        if (!project.equals("")) {
+            List<Project> projects = new ArrayList<>();
+            if (ioProject.getById(Integer.valueOf(project)) != null) {
+                projects.add(ioProject.getById(Integer.valueOf(project)));
             } else
                 req.setAttribute("warning_msg", REF_OBJ_NOT_EXISTS_WARN_MSG);
-            project.setTeams(teams);
+            customer.setProjects(projects);
         } else
             req.setAttribute("warning_msg", REF_OBJ_NOT_EXISTS_WARN_MSG);
 
-        ioProject.create(project);
+        ioCustomer.create(customer);
 
         doGet(req, resp);
     }

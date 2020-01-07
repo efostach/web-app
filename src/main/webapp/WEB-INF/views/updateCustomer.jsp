@@ -6,20 +6,18 @@
     <style>
         <%@include file="../css/style.css" %>
     </style>
-    <title>Create Skill</title>
+    <title>Update Customer</title>
 </head>
 <body>
-<h1>Create Skill</h1>
-<%
-    if (request.getAttribute("skill") != null) {
-        out.println("<p>" + request.getAttribute("skill") + "</p>");
-    }
-%>
+<h1>Update Customer</h1>
 <form method="post">
+    <label>Id<br/>
+        <input type="text" name="id"><br/>
+    </label>
     <label>Name<br/>
         <input type="text" name="name"><br/>
     </label>
-    <button class="submit" type="submit"><span>Submit</span></button>
+    <button class="submit" type="submit"><span>Update</span></button>
 </form>
 <button class="back" onclick="location.href='/'"><span>Back</span></button>
 </body>
